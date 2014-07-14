@@ -5,6 +5,13 @@
  * Time: 12:49 PM
  */
 
+
+/*
+ * added for the example API call
+ * */
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET');
+
 set_time_limit(0);
 
 $BASE_URL =
@@ -118,4 +125,16 @@ function test()
     echo currency_quotes($test_currencies);
 }
 
-test();
+/*
+ * API like test
+ * */
+if (isset($_GET['currencies'])){
+    //?currencies=mxn_eur-mxn_usd-mxn_can
+    $currencies = explode('-', $_GET['currencies']);
+    $currency_array = [];
+    foreach($currencies as $currency){
+        $quote = explode("_", $currency);
+        $currency_array[] = $quote;
+    }
+    echo currency_quotes($currency_array);
+}
