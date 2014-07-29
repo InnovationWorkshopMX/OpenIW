@@ -3,18 +3,14 @@ WP-Base
 
 ![image](http://i-w.mx/images/iw_logo.png)
 
-Template de Wordpress básico, contiene los archivos necesarios para la creación de un nuevo template.
+Template de Wordpress para Grupo Captiva
 
 **Tecnología**:
 
 	- Wordpress
+	- Foundation 5
 	- PHP5
-	
+
 **Mantainers**:
 
-Marín Alcaraz
-
-Hector Vela
-
-
-
+    - Marín Alcaraz
