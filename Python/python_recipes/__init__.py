@@ -12,6 +12,7 @@ import re
 
 from functools import wraps
 from urlparse import urlparse
+from django.contrib.auth.decorators import login_required
 
 from django.shortcuts import HttpResponse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -22,6 +23,11 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 #from django.template.loader import get_template
 #from xhtml2pdf import pisa
 
+class LoginRequiredMixin(object):
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+        return login_required(view, login_url='/')
 
 def response_json(content, status_code):
     """
