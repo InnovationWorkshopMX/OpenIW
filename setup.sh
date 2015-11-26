@@ -27,5 +27,5 @@ service apache2 restart
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 echo "ServerSignature off" >> /etc/apache2/apache2.conf
 echo "ServerTokens prod" >> /etc/apache2/apache2.conf
-
+apt-get -y install mail-stack-delivery
 echo "Done! Don't forget to enable phpmyadmin"
